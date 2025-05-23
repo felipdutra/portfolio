@@ -5,6 +5,7 @@
   "scripts": {
     "start": "concurrently \"npm run sass\" \"npm run serve\"",
     "sass": "sass --watch scss:css",
+    "build": "sass scss:css",
     "serve": "browser-sync start --server --files 'index.html, css/*.css, js/*.js, scss/*.scss'"
   },
   "keywords": [],
