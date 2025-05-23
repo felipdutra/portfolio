@@ -21,7 +21,9 @@ jobs:
         run: npm install
 
       - name: Build SCSS
-        run: npm run sass -- --no-watch
+        run: |
+          echo "Building SCSS files..."
+          npx sass scss:css --style=compressed
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
