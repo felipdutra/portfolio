@@ -1,4 +1,5 @@
 node_modules/
-css/*.css
-css/*.css.map
+# Remova ou comente a linha abaixo
+# css/*.css
+# css/*.css.map
 .DS_Store

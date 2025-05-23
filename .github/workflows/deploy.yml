@@ -12,20 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build SCSS
-        run: |
-          echo "Building SCSS files..."
-          npx sass scss:css --style=compressed
-          echo "SCSS build completed!"
-          ls -la css/
+      # Removemos a etapa de build do SCSS para evitar problemas de permissão
+      # Você compilará o CSS localmente antes de fazer push
 
       - name: Deploy to cPanel via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
