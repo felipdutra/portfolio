@@ -12,24 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Prepare files for deployment
-        run: |
-          echo "Preparing files for deployment..."
-          mkdir -p deploy
-          cp -r css deploy/
-          cp -r js deploy/
-          cp -r images deploy/ || true
-          cp -r fonts deploy/ || true
-          cp *.html deploy/ || true
-          cp *.php deploy/ || true
-          cp *.ico deploy/ || true
-          ls -la deploy/
-
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy/
+          local-dir: ./
           server-dir: /public_html/
+          exclude: |
+            **/node_modules/**
