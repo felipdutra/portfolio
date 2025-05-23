@@ -12,8 +12,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Removemos a etapa de build do SCSS para evitar problemas de permissão
-      # Você compilará o CSS localmente antes de fazer push
+      - name: Clean up files before deploy
+        run: |
+          echo "Removing unnecessary files..."
+          rm -rf node_modules
+          rm -rf scss
+          rm -f package.json
+          rm -f package-lock.json
+          rm -rf .github
+          ls -la
 
       - name: Deploy to cPanel via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -24,11 +31,4 @@ jobs:
           local_path: "./"
           remote_path: "/public_html/"
           sftpArgs: "-o ConnectTimeout=60"
-          exclude: |
-            .git*
-            .git*/**
-            node_modules/**
-            scss/**
-            package.json
-            package-lock.json
-            .github/**
+          delete_remote_files: false
