@@ -23,11 +23,10 @@ jobs:
 
       - name: Build SCSS
         run: |
-          echo "Building SCSS files..."
-          chmod +x ./node_modules/.bin/sass
-          sass scss:css --style=compressed
-          echo "SCSS build completed!"
-          ls -la css/
+        echo "Building SCSS files..."
+        npm run build
+        echo "SCSS build completed!"
+        ls -la css/
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
