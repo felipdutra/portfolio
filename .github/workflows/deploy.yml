@@ -13,11 +13,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to cPanel via FTP
-        uses: sebastianpopp/ftp-action@releases/v2
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "."
-          remoteDir: "/public_html/"
-          options: "--include='*.html' --include='*.css' --include='*.js' --include='*.php' --include='*.jpg' --include='*.png' --include='*.svg' --include='*.ico' --exclude='node_modules/' --exclude='.git/' --exclude='scss/' --exclude='package.json' --exclude='package-lock.json'"
+          local-dir: ./
+          server-dir: /public_html/
+          timeout: 60000
+          exclude: |
+            **/node_modules/**
+            **/.git/**
+            **/.github/**
+            **/scss/**
+            package.json
+            package-lock.json
