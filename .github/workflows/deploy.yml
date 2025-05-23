@@ -20,4 +20,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "."
           remoteDir: "/public_html/"
-          options: "--exclude=node_modules/ --exclude=.git/ --exclude=.github/ --exclude=scss/ --exclude=package.json --exclude=package-lock.json"
+          options: "--include='*.html' --include='*.css' --include='*.js' --include='*.php' --include='*.jpg' --include='*.png' --include='*.svg' --include='*.ico' --exclude='node_modules/' --exclude='.git/' --exclude='scss/' --exclude='package.json' --exclude='package-lock.json'"

@@ -189,8 +189,8 @@ body {
 }
 :root,
 [data-theme=dark] {
-  --background: rgb(11 11 11);
   --accent: var(--c-100);
+  --background: rgb(11 11 11);
   --c-100: rgb(255 255 255 / 100%);
   --c-80: rgb(255 255 255 / 80%);
   --c-65: rgb(255 255 255 / 65%);
