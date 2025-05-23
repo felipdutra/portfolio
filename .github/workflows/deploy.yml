@@ -12,23 +12,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Clean up files before deploy
-        run: |
-          echo "Removing unnecessary files..."
-          rm -rf node_modules
-          rm -rf scss
-          rm -f package.json
-          rm -f package-lock.json
-          rm -rf .github
-          ls -la
-
-      - name: Deploy to cPanel via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: "./"
-          remote_path: "/public_html/"
-          sftpArgs: "-o ConnectTimeout=60"
-          delete_remote_files: false
+          local-dir: ./
+          server-dir: /public_html/
+          timeout: 160000
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/scss/**
+            package.json
+            package-lock.json
+            .github/**
