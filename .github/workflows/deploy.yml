@@ -12,6 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Clean unnecessary files
+        run: |
+          rm -rf node_modules
+          rm -rf .git
+          rm -rf .github
+          rm -rf scss
+          rm -f package.json
+          rm -f package-lock.json
+          echo "Files remaining for deploy:"
+          find . -type f | head -20
+
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -21,10 +32,3 @@ jobs:
           local-dir: ./
           server-dir: /public_html/
           timeout: 60000
-          exclude: |
-            **/node_modules/**
-            **/.git/**
-            **/.github/**
-            **/scss/**
-            package.json
-            package-lock.json
