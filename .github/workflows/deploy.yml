@@ -20,15 +20,14 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install -g sass
 
       - name: Build SCSS
         run: |
-          echo "Checking sass installation..."
-          which sass || echo "Sass not found in PATH"
-          npm list sass || echo "Sass not in local dependencies"
-          echo "Building SCSS files with node_modules..."
-          ./node_modules/.bin/sass scss:css --style=compressed
+          echo "Building SCSS files..."
+          chmod +x ./node_modules/.bin/sass
+          sass scss:css --style=compressed
+          echo "SCSS build completed!"
+          ls -la css/
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
