@@ -12,20 +12,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build SCSS
+        run: |
+          echo "Building SCSS files..."
+          npx sass scss:css --style=compressed
+          echo "SCSS build completed!"
+          ls -la css/
+
+      - name: Deploy to cPanel via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /public_html/
-          timeout: 120000 # Aumentar para 2 minutos (em milissegundos)
+          local_path: "./"
+          remote_path: "/public_html/"
+          sftpArgs: "-o ConnectTimeout=60"
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/scss/**
+            .git*
+            .git*/**
+            node_modules/**
+            scss/**
             package.json
             package-lock.json
             .github/**
