@@ -24,8 +24,7 @@ jobs:
       - name: Build SCSS
         run: |
           echo "Building SCSS files..."
-          chmod +x ./node_modules/.bin/sass
-          sass scss:css --style=compressed
+          npm run build
           echo "SCSS build completed!"
           ls -la css/
 
