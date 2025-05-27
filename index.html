@@ -52,8 +52,6 @@
     <meta property="og:locale:alternate" content="pt_BR" />
     <link href="favico.png" rel="icon" type="image/png" />
     <link href="css/main.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   </head>
 
   <body id="body">
@@ -111,9 +109,9 @@
             <div>
               <h2 class="bio--subtitle">
                 I'm a <span>senior product designer</span> and
-                <span>UI-focused front-end developer</span>, based in São Paulo,
-                Brazil. With over 11 years of experience, I’ve worked across the
-                entire product journey — from discovery to delivery —
+                <span>UI front-end developer</span>, based in São Paulo, Brazil.
+                With over 11 years of experience, I’ve worked across the entire
+                product journey — from discovery to delivery —
                 <span
                   >helping turn ideas into well-crafted digital
                   experiences</span
@@ -166,20 +164,27 @@
             <div>
               <div class="bio--label">Contact info</div>
               <div class="bio--links">
-                <a href="mailto:felipdutra@gmail.com">felipdutra@gmail.com ↗</a>
+                <a href="mailto:felipdutra@gmail.com" class="link"
+                  >felipdutra@gmail.com ↗</a
+                >
                 <br />
-                <a href="https://cal.com/felipdutra" target="_blank"
+                <a
+                  href="https://cal.com/felipdutra"
+                  target="_blank"
+                  class="link"
                   >Book a call ↗</a
                 >
                 <br />
                 <a
                   href="https://www.linkedin.com/in/felipdutra/"
+                  class="link"
                   target="_blank"
                   >My LinkedIn ↗</a
                 >
                 <br />
                 <a
                   href="http://dutra.pro/Felipe-Dutra-Sr-Product-Desiger-Resume.pdf"
+                  class="link"
                   target="_blank"
                   >Read my resume ↗</a
                 >
@@ -191,17 +196,20 @@
                 <a
                   href="https://www.linkedin.com/company/appticket/about/"
                   target="_blank"
+                  class="link"
                   >AppTicket ↗</a
                 >,
                 <a
                   href="https://www.linkedin.com/company/weego-io/about/"
                   target="_blank"
+                  class="link"
                   >Weego ↗</a
                 >
                 and
                 <a
                   href="https://www.linkedin.com/company/socialminer/about/"
                   target="_blank"
+                  class="link"
                   >Social Miner ↗</a
                 >.
               </div>
@@ -212,27 +220,27 @@
 
       <section class="work" id="work">
         <div class="work__card">
+          <div class="work__card--content">
+            <a class="work__card--title" href="appticket.html"> Appticket </a>
+            <!-- <div class="tagList">
+              <div class="tagList--item">PRODUCT DESIGN</div>
+              <div class="tagList--item">UI FRONT-END</div>
+              <div class="tagList--item">PRODUCT STRATEGY</div>
+            </div> -->
+            <p class="work__card--text">
+              Founding Product Designer, and UI Front-end Developer. AppTicket
+              is a sales platform and social strategies for events.
+            </p>
+            <div class="work__card--links">
+              <a href="#" class="link"> New checkout flow ↗</a>
+              <a href="#" class="link"> Hotsite features ↗</a>
+              <a href="#" class="link"> Dashboard revamp ↗</a>
+              <a href="#" class="link"> Website redesign ↗</a>
+            </div>
+          </div>
           <a href="/appticket/" class="work__card--thumb">
             <img src="img/appticket-0.png" />
           </a>
-          <div class="work__card--content">
-            <a class="work__card--title" href="appticket.html"> Appticket </a>
-            <div class="tagList">
-              <div class="tagList--item">PRODUCT DESIGN</div>
-              ·
-              <div class="tagList--item">UI FRONT-END</div>
-              ·
-              <div class="tagList--item">PRODUCT STRATEGY</div>
-            </div>
-            <p class="work__card--text">
-              Founding Product Designer, and UI Front-end Developer. AppTicket
-              is a sales platform and social strategies for events. More than
-              20.000 event producers across Brazil.
-            </p>
-            <a href="appticket.html" class="button button--secondary">
-              View more
-            </a>
-          </div>
         </div>
         <div class="work__card">
           <a href="weego.html" class="work__card--thumb">
@@ -240,13 +248,11 @@
           </a>
           <div class="work__card--content">
             <a class="work__card--title" href="weego.html"> Weego </a>
-            <div class="tagList">
+            <!-- <div class="tagList">
               <div class="tagList--item">PRODUCT DESIGN</div>
-              ·
               <div class="tagList--item">UI FRONT-END</div>
-              ·
               <div class="tagList--item">PRODUCT STRATEGY</div>
-            </div>
+            </div> -->
             <p class="work__card--text">
               Founding Product Designer, and UI Front-end Developer.
               Early-stage, B2B Saas platform for leadership development on soft
