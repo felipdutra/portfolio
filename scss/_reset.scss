@@ -147,6 +147,7 @@ table {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  tab-size: 4;
   word-break: break-word;
   border-width: 0;
   border-style: initial;
@@ -156,10 +157,36 @@ table {
   outline: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  transition: var(--tr);
+  font-feature-settings: "ss03" 1, "liga" 1, "calt" 1;
+}
+
+a,
+button {
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--tr);
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--soft);
+  text-underline-offset: 2px;
+  &:hover {
+    color: var(--orange);
+    text-decoration-color: var(--orange);
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
 }

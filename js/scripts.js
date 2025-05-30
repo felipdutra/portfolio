@@ -1,85 +1,50 @@
-// DATE & TIME
-const updateDateTime = () => {
-  const now = new Date();
+// BODY TRANSITION
+window.addEventListener("load", () => {
+  document.body.classList.remove("loading");
+  document.body.classList.add("loaded");
+});
 
-  const formatter = new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "2-digit",
+// SCROLLED NAV
+window.addEventListener("scroll", function () {
+  const nav = document.querySelector(".nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+// TOGGLE MENU
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".nav__menu--toggle");
+  const menu = document.querySelector(".nav__menu--links");
+
+  toggle.addEventListener("click", function (event) {
+    event.stopPropagation(); // impede o clique de propagar e fechar logo em seguida
+    menu.classList.toggle("active");
   });
-  const datePart = formatter.format(now); // Ex: "Mon, May 05"
 
-  const hours24 = now.getHours();
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const ampm = hours24 >= 12 ? "PM" : "AM";
-  const hours12 = hours24 % 12 || 12;
-
-  const timePart = `${hours12}:${minutes}${ampm}`;
-  const display = `${datePart} - ${timePart}`;
-
-  const el = document.getElementById("datetime");
-  if (el) el.textContent = display;
-};
-
-updateDateTime();
-setInterval(updateDateTime, 60000);
-
-// TEMA
-const themeButtons = document.querySelectorAll(".header__theme--item");
-
-const setTheme = (theme) => {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("selectedTheme", theme);
-
-  themeButtons.forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.theme === theme);
-  });
-};
-
-themeButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const selected = btn.dataset.theme;
-    setTheme(selected);
+  document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.classList.remove("active");
+    }
   });
 });
 
-const savedTheme = localStorage.getItem("selectedTheme") || "dark";
-setTheme(savedTheme);
+// PHOTO HOVER
+document.querySelectorAll(".photo-hover").forEach((el) => {
+  el.addEventListener("mousemove", (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-// COPY E-MAIL
-document.addEventListener("DOMContentLoaded", () => {
-  const emailElements = document.querySelectorAll(".copyEmail");
-  const alertElement = document.querySelector(".copyAlert");
+    el.style.setProperty("--mouse-x", `${x}px`);
+    el.style.setProperty("--mouse-y", `${y}px`);
+  });
 
-  emailElements.forEach((el) => {
-    el.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText("felipdutra@gmail.com");
-
-        alertElement.style.display = "flex";
-
-        setTimeout(() => {
-          alertElement.style.display = "none";
-        }, 5000);
-      } catch (err) {
-        console.error("Erro ao copiar:", err);
-
-        const textarea = document.createElement("textarea");
-        textarea.value = "felipdutra@gmail.com";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          alertElement.style.display = "flex";
-          setTimeout(() => {
-            alertElement.style.display = "none";
-          }, 5000);
-        } catch (e) {
-          console.error("Erro no fallback:", e);
-        }
-        document.body.removeChild(textarea);
-      }
-    });
+  el.addEventListener("mouseleave", () => {
+    el.style.setProperty("--mouse-x", `50%`);
+    el.style.setProperty("--mouse-y", `50%`);
   });
 });
 
