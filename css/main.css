@@ -306,6 +306,11 @@ nav__intro,
   flex-direction: row;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+}
+nav__intro:hover,
+.nav__intro:hover {
+  color: inherit;
 }
 nav__intro--avatar,
 .nav__intro--avatar {
