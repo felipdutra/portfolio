@@ -50,7 +50,7 @@ document.querySelectorAll(".photo-hover").forEach((el) => {
 
 // LIGHTBOX
 
-const thumbs = document.querySelectorAll(".thumbItem img");
+const thumbs = document.querySelectorAll(".modal-img img");
 const modal = document.getElementById("imgModal");
 const modalImg = document.getElementById("modalImage");
 const closeBtn = document.getElementById("closeBtn");

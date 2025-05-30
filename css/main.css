@@ -197,7 +197,7 @@ img {
   --offset: #1e1e1c;
   --background: #161615;
   --background-rgb: 22 22 21;
-  --orange: #ff4a00;
+  --orange: #eaa726;
   --green: #74cf5d;
   --yellow: #f3db2e;
   --font-sans: Inter, sans-serif;
@@ -290,11 +290,16 @@ nav.scrolled .nav__intro--avatar,
   height: 36px;
   width: min(100%, 36px);
 }
+nav-case.scrolled,
+.nav-case.scrolled {
+  height: 44px;
+}
 nav__wrapper,
 .nav__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   gap: 24px;
   width: min(100%, 580px + var(--padding-inline) * 2);
   padding: 0 var(--padding-inline);
@@ -346,6 +351,7 @@ nav__menu--item,
 .nav__menu--item {
   display: flex;
   align-items: center;
+  gap: 4px;
   font: var(--text-small);
   color: var(--soft);
   position: relative;
@@ -376,12 +382,10 @@ nav__menu--toggle,
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   height: 44px;
   padding: 0;
   border: 0;
-  font: var(--text-small);
-  border-radius: 8px;
   background-color: transparent;
 }
 nav__menu--toggle svg,
@@ -453,12 +457,18 @@ header,
 header--title,
 .header--title {
   font: var(--text-title);
-  font-feature-settings: "ss03" 1, "cv06" 1, "cv10" 1, "cv11" 1, "liga" 1, "calt" 1;
   max-width: 32ch;
 }
 header--title span,
 .header--title span {
   color: var(--orange);
+}
+header--subtitle,
+.header--subtitle {
+  font: var(--text-body);
+  color: var(--soft);
+  margin-top: 8px;
+  max-width: 1000ch;
 }
 
 section,
@@ -495,7 +505,7 @@ section__content,
 .section__content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   flex: 1;
   width: 100%;
 }
@@ -515,9 +525,28 @@ section__content--text-soft,
 .section__content--text-soft {
   color: var(--soft);
 }
+section__content--text svg,
+.section__content--text svg {
+  color: var(--orange);
+}
 section__content--link,
 .section__content--link {
   margin-top: 4px;
+}
+section__content ul,
+.section__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+section__content ul li,
+.section__content ul li {
+  list-style: circle;
+  list-style-position: outside;
+}
+section__content ul li span,
+.section__content ul li span {
+  color: var(--orange);
 }
 section__project--grid,
 .section__project--grid {
@@ -565,6 +594,32 @@ section__project .photo-hover::after,
 section__project .photo-hover:hover::after,
 .section__project .photo-hover:hover::after {
   opacity: 1;
+}
+section__case--header,
+.section__case--header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+section__case--title,
+.section__case--title {
+  font: var(--text-title);
+}
+section__case--title span,
+.section__case--title span {
+  color: var(--orange);
+}
+section__case--subtitle,
+.section__case--subtitle {
+  font: var(--text-body);
+  color: var(--soft);
+}
+section__case--cover,
+.section__case--cover {
+  margin-top: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
 }
 section__experience,
 .section__experience {
@@ -662,6 +717,28 @@ section__photos img:hover:nth-child(2), section__photos img:hover:nth-child(4),
 .section__photos img:hover:nth-child(4) {
   rotate: 3deg;
 }
+section__gallery,
+.section__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+section__gallery--item,
+.section__gallery--item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+section__gallery--item small,
+.section__gallery--item small {
+  font: var(--text-smaller);
+  color: var(--soft);
+  font-weight: var(--fw-400);
+  margin-bottom: 16px;
+}
 
 footer,
 .footer {
@@ -727,6 +804,85 @@ footer__menu--item:hover,
   color: var(--accent);
 }
 
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease both;
+}
+#imgModal img {
+  width: 100%;
+  max-height: 90%;
+  animation: fadeInScale 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
+  object-fit: contain;
+}
+#imgModal #closeBtn,
+#imgModal #prevBtn,
+#imgModal #nextBtn {
+  display: grid;
+  place-items: center;
+  background-color: rgba(30, 30, 28, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--accent);
+  border-radius: 999px;
+  padding-bottom: 1px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+  z-index: 9;
+}
+#imgModal #closeBtn svg,
+#imgModal #prevBtn svg,
+#imgModal #nextBtn svg {
+  scale: 1.2;
+}
+#imgModal #closeBtn {
+  top: 20px;
+  right: 20px;
+}
+#imgModal #prevBtn,
+#imgModal #nextBtn {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#imgModal #prevBtn {
+  left: 20px;
+  padding-right: 1px;
+}
+#imgModal #nextBtn {
+  right: 20px;
+  padding-left: 1px;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media only screen and (max-width: 580px) {
   main,
   .main,
@@ -742,6 +898,14 @@ footer__menu--item:hover,
   nav.scrolled,
   .nav.scrolled {
     height: 64px;
+  }
+  nav-case,
+  .nav-case {
+    height: 64px;
+  }
+  nav-case.scrolled,
+  .nav-case.scrolled {
+    height: 44px;
   }
   nav__intro--avatar,
   .nav__intro--avatar {
@@ -843,6 +1007,14 @@ footer__menu--item:hover,
     padding-bottom: 60px;
     margin: -24px -40px 0;
   }
+  section__gallery--item,
+  .section__gallery--item {
+    margin: 0 -24px;
+  }
+  section__gallery--item small,
+  .section__gallery--item small {
+    padding-inline: 24px;
+  }
   footer,
   .footer {
     padding-block: 60px;
@@ -860,6 +1032,20 @@ footer__menu--item:hover,
   .footer__menu--item {
     width: 100%;
     justify-content: center;
+  }
+  #imgModal #prevBtn,
+  #imgModal #nextBtn {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+  #imgModal #prevBtn {
+    left: auto;
+    right: calc(50% + 8px);
+  }
+  #imgModal #nextBtn {
+    right: auto;
+    left: calc(50% + 8px);
   }
 }
 .relative {
