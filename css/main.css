@@ -571,6 +571,7 @@ section__project .photo-hover,
   perspective: 500px;
   --mouse-x: 50%;
   --mouse-y: 50%;
+  border-radius: 10px;
 }
 section__project .photo-hover img,
 .section__project .photo-hover img {
@@ -616,7 +617,7 @@ section__case--subtitle,
 }
 section__case--cover,
 .section__case--cover {
-  margin-top: 16px;
+  margin-top: 32px;
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
@@ -736,7 +737,6 @@ section__gallery--item small,
 .section__gallery--item small {
   font: var(--text-smaller);
   color: var(--soft);
-  font-weight: var(--fw-400);
   margin-bottom: 16px;
 }
 
