@@ -82,10 +82,22 @@
             </svg>
           </button>
           <div class="nav__menu--links">
-            <a href="/" class="nav__menu--item">Portfolio</a>
-            <a href="./" class="nav__menu--item active">Services</a>
-            <a href="../about/" class="nav__menu--item">About</a>
-            <a href="#contact" class="nav__menu--item">Contact</a>
+            <a href="/" class="nav__menu--item" data-i18n="menuPortfolio">
+              Portfolio
+            </a>
+            <a
+              href="./"
+              class="nav__menu--item active"
+              data-i18n="menuServices"
+            >
+              Services
+            </a>
+            <a href="../about/" class="nav__menu--item" data-i18n="menuAbout">
+              About
+            </a>
+            <a href="#contact" class="nav__menu--item" data-i18n="menuContact">
+              Contact
+            </a>
           </div>
         </div>
       </div>
@@ -93,65 +105,25 @@
     <main>
       <header>
         <div class="header--title">
-          Founder, Startup or Agency?<br />
-          <span>Let's collaborate</span> to design your vision into solutions
-          that drive customer and business growth.
+          <div data-i18n="heroTitleFounder"></div>
+          <div data-i18n="heroTitleLetsCollaborate"></div>
         </div>
-        <div class="fx fx-row fx-gap-12">
-          <a href="#" class="bt bt-primary">Book a call</a>
-          <a href="#" class="bt bt-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="15"
-              fill="none"
-              viewBox="0 0 14 15"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M7 1.5a6 6 0 0 0-6 6c0 1.126.316 2.175.855 3.075L1.054 13.5l2.987-.784A5.968 5.968 0 0 0 7 13.5a6 6 0 0 0 0-12Z"
-              />
-              <path
-                fill="currentColor"
-                d="M5.23 4.705c-.086-.004-.186-.004-.284-.004-.1 0-.26.037-.397.186-.135.149-.519.507-.519 1.24 0 .73.531 1.438.606 1.535.074.1 1.028 1.649 2.54 2.244 1.253.494 1.51.396 1.784.37.272-.023.878-.358 1.002-.705.123-.347.123-.644.085-.707-.038-.06-.135-.097-.284-.172-.15-.074-.88-.434-1.017-.483-.135-.049-.234-.075-.332.074-.1.15-.383.484-.472.581-.086.1-.172.112-.32.037-.15-.074-.629-.23-1.196-.737A4.445 4.445 0 0 1 5.6 7.136c-.086-.149-.01-.23.065-.305.068-.065.15-.172.224-.258.072-.088.097-.149.146-.249.052-.097.025-.185-.012-.26-.037-.074-.325-.81-.458-1.102-.111-.247-.228-.254-.335-.257Z"
-              />
-            </svg>
-            Chat
+          <a href="#" class="bt bt-primary" data-i18n="buttonBookCall"></a>
           </a>
-        </div>
       </header>
-      <!-- <header>
-        <div class="header--title">
-          Designing and developing solutions for businesses. Websites, Apps, and
-          Branding.
+      <section>
+        <div class="section__quote--grid" style="margin-top: -20px">
+          <div class="section__quote--item">
+            <div class="section__quote--text" data-i18n="quoteOne"></div>
+            <span>McKinsey & Company</span>
+          </div>
+          <div class="section__quote--item">
+            <div class="section__quote--text" data-i18n="quoteTwo"></div>
+            <span>IBM Design Program</span>
+          </div>
         </div>
-        <div class="fx fx-row fx-gap-12">
-          <a href="#" class="bt bt-primary">Book a call</a>
-          <a href="#" class="bt bt-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="15"
-              fill="none"
-              viewBox="0 0 14 15"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M7 1.5a6 6 0 0 0-6 6c0 1.126.316 2.175.855 3.075L1.054 13.5l2.987-.784A5.968 5.968 0 0 0 7 13.5a6 6 0 0 0 0-12Z"
-              />
-              <path
-                fill="currentColor"
-                d="M5.23 4.705c-.086-.004-.186-.004-.284-.004-.1 0-.26.037-.397.186-.135.149-.519.507-.519 1.24 0 .73.531 1.438.606 1.535.074.1 1.028 1.649 2.54 2.244 1.253.494 1.51.396 1.784.37.272-.023.878-.358 1.002-.705.123-.347.123-.644.085-.707-.038-.06-.135-.097-.284-.172-.15-.074-.88-.434-1.017-.483-.135-.049-.234-.075-.332.074-.1.15-.383.484-.472.581-.086.1-.172.112-.32.037-.15-.074-.629-.23-1.196-.737A4.445 4.445 0 0 1 5.6 7.136c-.086-.149-.01-.23.065-.305.068-.065.15-.172.224-.258.072-.088.097-.149.146-.249.052-.097.025-.185-.012-.26-.037-.074-.325-.81-.458-1.102-.111-.247-.228-.254-.335-.257Z"
-              />
-            </svg>
-            Chat
-          </a>
-        </div>
-      </header> -->
+      </section>
+      <div class="spacer spacer-80"></div>
       <section>
         <div class="section--label">Services</div>
         <div class="section__col">
@@ -172,14 +144,12 @@
                   d="M15 6.667V5a1.667 1.667 0 0 0-1.666-1.667h-10A1.667 1.667 0 0 0 1.667 5v5.834A1.667 1.667 0 0 0 3.334 12.5H10M8.333 15.833v-3.3 2.625M5.833 15.834H10M16.666 10H15c-.92 0-1.667.746-1.667 1.667v5c0 .92.746 1.666 1.667 1.666h1.666c.92 0 1.667-.746 1.667-1.666v-5c0-.92-.746-1.667-1.667-1.667Z"
                 />
               </svg>
-              Web & Mobile App Design
+              <span data-i18n="serviceOneTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              From scratch or improving what you already have, I design
-              intuitive and engaging digital products. I've worked on everything
-              from simple apps to full-scale platforms, always aligning user
-              experience with real business goals.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="serviceOneText"
+            ></div>
           </div>
           <div class="section__content">
             <div class="section__content--text">
@@ -198,14 +168,12 @@
                   d="m13.333 15 5-5-5-5M6.667 5l-5 5 5 5"
                 />
               </svg>
-              Web development
+              <span data-i18n="serviceTwoTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              I build fast, accessible websites using clean code (HTML, SCSS,
-              JavaScript, Vue.js, React, Tailwind, Shadcn) or tools like Webflow
-              and Framer. Always following high industry standards to ensure a
-              smooth and responsive experience on any device.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="serviceTwoText"
+            ></div>
           </div>
           <div class="section__content">
             <div class="section__content--text">
@@ -231,14 +199,12 @@
                   </clipPath>
                 </defs>
               </svg>
-              Design Systems
+              <span data-i18n="serviceThreeTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              I build easy-to-use design systems with clear component
-              architecture, sub-systems, and design token structures. Everything
-              is documented and built to stay in sync with code, helping your
-              team move faster and stay consistent as the product scales.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="serviceThreeText"
+            ></div>
           </div>
           <div class="section__content">
             <div class="section__content--text">
@@ -270,49 +236,67 @@
                   </clipPath>
                 </defs>
               </svg>
-              Brand Identity & Logo Design
+              <span data-i18n="serviceFourTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              I help brands find their voice and visual identity. From logo
-              design and pitch decks to complete brand guidelines, I create
-              systems that are consistent, memorable, and built to scale across
-              every touchpoint, digital or physical.
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="serviceFourText"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <header>
+        <div class="header--title">
+          <div data-i18n="heroTitleReady"></div>
+          <div data-i18n="heroTitleLetsTalk"></div>
+        </div>
+          <a href="#" class="bt bt-primary" data-i18n="buttonBookCall"></a>
+          </a>
+      </header>
+      <section>
+        <div class="section__how">
+          <div class="section__how--grid">
+            <div class="section__how--card">
+              <div class="section__how--title">
+                <span>01</span>
+                <div data-i18n="howOneTitle"></div>
+              </div>
+              <div class="section__how--text" data-i18n="howOneText"></div>
+            </div>
+            <div class="section__how--card">
+              <div class="section__how--title">
+                <span>02</span>
+                <div data-i18n="howTwoTitle"></div>
+              </div>
+              <div class="section__how--text" data-i18n="howTwoText"></div>
+            </div>
+            <div class="section__how--card">
+              <div class="section__how--title">
+                <span>03</span>
+                <div data-i18n="howThreeTitle"></div>
+              </div>
+              <div class="section__how--text" data-i18n="howThreeText"></div>
+            </div>
+            <div class="section__how--card">
+              <div class="section__how--title">
+                <span>04</span>
+                <div data-i18n="howFourTitle"></div>
+              </div>
+              <div class="section__how--text" data-i18n="howFourText"></div>
             </div>
           </div>
         </div>
       </section>
       <header>
         <div class="header--title">
-          Ready to get <span>design done</span>?<br />
-          Let's talk about your next thing.
+          <div data-i18n="heroTitleCustom"></div>
+          <div data-i18n="heroTitleContact"></div>
         </div>
-        <div class="fx fx-row fx-gap-12">
-          <a href="#" class="bt bt-primary">Book a call</a>
-          <a href="#" class="bt bt-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="15"
-              fill="none"
-              viewBox="0 0 14 15"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M7 1.5a6 6 0 0 0-6 6c0 1.126.316 2.175.855 3.075L1.054 13.5l2.987-.784A5.968 5.968 0 0 0 7 13.5a6 6 0 0 0 0-12Z"
-              />
-              <path
-                fill="currentColor"
-                d="M5.23 4.705c-.086-.004-.186-.004-.284-.004-.1 0-.26.037-.397.186-.135.149-.519.507-.519 1.24 0 .73.531 1.438.606 1.535.074.1 1.028 1.649 2.54 2.244 1.253.494 1.51.396 1.784.37.272-.023.878-.358 1.002-.705.123-.347.123-.644.085-.707-.038-.06-.135-.097-.284-.172-.15-.074-.88-.434-1.017-.483-.135-.049-.234-.075-.332.074-.1.15-.383.484-.472.581-.086.1-.172.112-.32.037-.15-.074-.629-.23-1.196-.737A4.445 4.445 0 0 1 5.6 7.136c-.086-.149-.01-.23.065-.305.068-.065.15-.172.224-.258.072-.088.097-.149.146-.249.052-.097.025-.185-.012-.26-.037-.074-.325-.81-.458-1.102-.111-.247-.228-.254-.335-.257Z"
-              />
-            </svg>
-            Chat
+          <a href="#" class="bt bt-primary" data-i18n="buttonBookCall"></a>
           </a>
-        </div>
       </header>
       <section>
-        <div class="section--label">Why</div>
+        <div class="section--label" data-i18n="whyLabel">Why</div>
         <div class="section__col">
           <div class="section__content">
             <div class="section__content--text">
@@ -338,13 +322,12 @@
                   </clipPath>
                 </defs>
               </svg>
-              11+ years designing
+              <span data-i18n="whyItemOneTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              With over a decade of experience, I’ve helped bring ideas to life
-              across different industries, always balancing user needs with
-              business goals.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="whyItemOneText"
+            ></div>
           </div>
           <div class="section__content">
             <div class="section__content--text">
@@ -363,13 +346,12 @@
                   d="M10.834 13.333A2.5 2.5 0 0 1 12.7 17.5M15 10h.009M15 17.5H8.334A3.333 3.333 0 0 1 5 14.166a5.833 5.833 0 0 1 5.834-5.833H11l-3-3A1.65 1.65 0 1 1 10.334 3l2.833 2.833h.167m0 0c2.75 0 5 2.25 5 5v.833a1.666 1.666 0 0 1-1.667 1.667h-.833a2.5 2.5 0 0 0-2.5 2.5m0-10v-2.5a1.667 1.667 0 0 1 3.333 0v3.784m-10.323 3.32A2.5 2.5 0 1 0 5.01 14.02"
                 />
               </svg>
-              High-quality work, delivered fast
+              <span data-i18n="whyItemTwoTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              I focus on delivering clean, thoughtful design and front-end code,
-              fast. Without cutting corners on quality, usability, or
-              performance.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="whyItemTwoText"
+            ></div>
           </div>
           <div class="section__content">
             <div class="section__content--text">
@@ -388,47 +370,16 @@
                   d="M17.5 9.167v-5A1.667 1.667 0 0 0 15.833 2.5H4.167A1.667 1.667 0 0 0 2.5 4.167v11.666A1.666 1.666 0 0 0 4.167 17.5h5m.861-6.932a.415.415 0 0 1 .54-.54l7.5 2.917a.416.416 0 0 1-.028.786l-2.87.89a.834.834 0 0 0-.55.55l-.89 2.869a.416.416 0 0 1-.785.027l-2.917-7.5Z"
                 />
               </svg>
-              Made specifically for your audience
+              <span data-i18n="whyItemThreeTitle"></span>
             </div>
-            <div class="section__content--text section__content--text-soft">
-              Every project is shaped by real user insights. The result?
-              Experiences that feel natural, solve real problems, and connect
-              with the people who matter most.
-            </div>
+            <div
+              class="section__content--text section__content--text-soft"
+              data-i18n="whyItemThreeText"
+            ></div>
           </div>
         </div>
       </section>
-      <header>
-        <div class="header--title">
-          Have a <span>custom project</span> in mind?<br />
-          Contact me to receive a proposal.
-        </div>
-        <div class="fx fx-row fx-gap-12">
-          <a href="#" class="bt bt-primary">Book a call</a>
-          <a href="#" class="bt bt-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="15"
-              fill="none"
-              viewBox="0 0 14 15"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M7 1.5a6 6 0 0 0-6 6c0 1.126.316 2.175.855 3.075L1.054 13.5l2.987-.784A5.968 5.968 0 0 0 7 13.5a6 6 0 0 0 0-12Z"
-              />
-              <path
-                fill="currentColor"
-                d="M5.23 4.705c-.086-.004-.186-.004-.284-.004-.1 0-.26.037-.397.186-.135.149-.519.507-.519 1.24 0 .73.531 1.438.606 1.535.074.1 1.028 1.649 2.54 2.244 1.253.494 1.51.396 1.784.37.272-.023.878-.358 1.002-.705.123-.347.123-.644.085-.707-.038-.06-.135-.097-.284-.172-.15-.074-.88-.434-1.017-.483-.135-.049-.234-.075-.332.074-.1.15-.383.484-.472.581-.086.1-.172.112-.32.037-.15-.074-.629-.23-1.196-.737A4.445 4.445 0 0 1 5.6 7.136c-.086-.149-.01-.23.065-.305.068-.065.15-.172.224-.258.072-.088.097-.149.146-.249.052-.097.025-.185-.012-.26-.037-.074-.325-.81-.458-1.102-.111-.247-.228-.254-.335-.257Z"
-              />
-            </svg>
-            Chat
-          </a>
-        </div>
-      </header>
-      <section>
+      <section style="display: none">
         <div class="section--label">How</div>
         <div class="section__col">
           <div class="section__content">
@@ -446,8 +397,9 @@
                   stroke-linejoin="round"
                   stroke-width="1.5"
                   d="M8.5 11.666c.167-.833.583-1.416 1.25-2.083.833-.75 1.25-1.833 1.25-2.917a5 5 0 0 0-10 0C1 7.5 1.167 8.5 2.25 9.584c.583.583 1.083 1.25 1.25 2.083M3.5 15h5m-4.167 3.333h3.334"
-                /></svg
-              >Share what you’ve got or just your idea.
+                />
+              </svg>
+              Share what you’ve got or just your idea.
             </div>
             <div class="section__content--text section__content--text-soft">
               You can send over your logo, website, app screenshots, pitch deck,
@@ -470,8 +422,9 @@
                   stroke-linejoin="round"
                   stroke-width="1.5"
                   d="m16 16.5-3.617-3.617m1.95-4.716A6.667 6.667 0 1 1 1 8.167a6.667 6.667 0 0 1 13.333 0Z"
-                /></svg
-              >Discovery and direction
+                />
+              </svg>
+              Discovery and direction
             </div>
             <div class="section__content--text section__content--text-soft">
               We’ll take time to understand your audience, your goals, and what
@@ -495,8 +448,9 @@
                   stroke-linejoin="round"
                   stroke-width="1.5"
                   d="m11.518 14.929-8.9-2.428m4.214-5.82C5.33 8.94 3.524 9.565 1.347 9.971a.423.423 0 0 0-.252.683l6.1 7.402a.833.833 0 0 0 .987.17c1.763-1.207 4.484-4.218 4.484-5.711M14.646 2.2A1.769 1.769 0 1 1 17.148 4.7l-3.349 3.35a.417.417 0 0 0 0 .589l.787.786a2.008 2.008 0 0 1 0 2.84l-.787.787a.417.417 0 0 1-.589 0L6.294 6.138a.417.417 0 0 1 0-.59l.787-.786a2.008 2.008 0 0 1 2.84 0l.787.787a.417.417 0 0 0 .589 0l3.349-3.35Z"
-                /></svg
-              >Design and iteration
+                />
+              </svg>
+              Design and iteration
             </div>
             <div class="section__content--text section__content--text-soft">
               We’ll create 1 to 3 initial directions, refine them with your
@@ -519,8 +473,9 @@
                   stroke-linejoin="round"
                   stroke-width="1.5"
                   d="M11.833 13.332 13.5 15l3.333-3.333M16 8.332V6.666a1.667 1.667 0 0 0-.833-1.442L9.333 1.891a1.667 1.667 0 0 0-1.666 0L1.833 5.224A1.667 1.667 0 0 0 1 6.666v6.666a1.667 1.667 0 0 0 .833 1.442l5.834 3.333a1.666 1.666 0 0 0 1.666 0l1.667-.95m-6.25-13.6 7.5 4.292M1.242 5.832 8.5 10m0 0 7.258-4.167M8.5 10v8.333"
-                /></svg
-              >Final delivery
+                />
+              </svg>
+              Final delivery
             </div>
             <div class="section__content--text section__content--text-soft">
               If you love it, awesome! And if you’re okay with it, we might even
@@ -544,8 +499,9 @@
                   stroke-linejoin="round"
                   stroke-width="1.5"
                   d="m8.5 13.116 1.667 1.667a1.769 1.769 0 0 0 2.5-2.5M11 10.616l2.083 2.084a1.768 1.768 0 1 0 2.5-2.5L12.35 6.966a2.5 2.5 0 0 0-3.533 0l-.734.734a1.768 1.768 0 1 1-2.5-2.5l2.342-2.342a4.825 4.825 0 0 1 5.883-.725l.392.233c.355.214.777.289 1.183.209l1.45-.292m0-.833.834 9.166H16M1.833 1.45 1 10.616l5.417 5.417a1.768 1.768 0 0 0 2.5-2.5M1.833 2.283H8.5"
-                /></svg
-              >Yours to use however you like
+                />
+              </svg>
+              Yours to use however you like
             </div>
             <div class="section__content--text section__content--text-soft">
               Once it’s all approved, the design is fully yours. You’ll have
@@ -556,7 +512,7 @@
       </section>
       <section>
         <div class="section__contact" id="contact" style="padding-bottom: 0">
-          <div class="section--title">Let’s talk about our next project.</div>
+          <div class="section--title" data-i18n="contactTitle"></div>
           <div class="section__contact--grid">
             <a
               href="https://cal.com/felipdutra"
@@ -580,7 +536,7 @@
                   />
                 </svg>
               </div>
-              Book a call
+              <span data-i18n="buttonBookCall"></span>
             </a>
             <a
               href="mailto:felipdutra@gmail.com"
@@ -671,9 +627,19 @@
         </div>
         <div class="footer__menu">
           <div class="footer__menu--links">
-            <a href="/" class="footer__menu--item">Portfolio</a>
-            <a href="../services/" class="footer__menu--item">Services</a>
-            <a href="./" class="footer__menu--item">About</a>
+            <a
+              href="/"
+              class="footer__menu--item"
+              data-i18n="menuPortfolio"
+            ></a>
+            <a
+              href="../services/"
+              class="footer__menu--item"
+              data-i18n="menuServices"
+            ></a>
+            <a href="../about/" class="footer__menu--item" data-i18n="menuAbout"
+              >About</a
+            >
           </div>
           <div class="footer__menu--links">
             <a
@@ -707,5 +673,6 @@
 
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/scripts.js"></script>
+    <script src="../js/translate.js"></script>
   </body>
 </html>
