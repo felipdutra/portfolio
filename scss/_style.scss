@@ -6,6 +6,7 @@ body {
   scroll-behavior: smooth;
   text-wrap: pretty;
   font-feature-settings: "ss03" 1;
+  overflow-x: hidden;
   &.loading * {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -52,7 +53,6 @@ nav,
   display: flex;
   align-items: center;
   height: 100px;
-
   padding-bottom: 4px;
   width: 100%;
   z-index: 9;
@@ -334,7 +334,6 @@ section,
       perspective: 500px;
       --mouse-x: 50%;
       --mouse-y: 50%;
-      border-radius: 10px;
       img {
         display: block;
         width: 100%;
@@ -384,8 +383,6 @@ section,
     &--cover {
       margin-top: 32px;
       cursor: pointer;
-      border-radius: 10px;
-      overflow: hidden;
     }
   }
   &__experience {
@@ -486,8 +483,6 @@ section,
       display: flex;
       flex-direction: column;
       gap: 8px;
-      border-radius: 10px;
-      overflow: hidden;
       small {
         font: var(--text-smaller);
         color: var(--soft);
@@ -895,14 +890,6 @@ footer,
     &__photos {
       padding-bottom: 60px;
       margin: -24px -40px 0;
-    }
-    &__gallery {
-      &--item {
-        margin: 0 -24px;
-        small {
-          padding-inline: 24px;
-        }
-      }
     }
   }
   footer,

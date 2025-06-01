@@ -58,6 +58,7 @@ modalToggle.addEventListener("change", function () {
     document.body.style.overflow = ""; // libera scroll
   }
 });
+
 // LIGHTBOX
 
 const thumbs = document.querySelectorAll(".modal-img img");
@@ -111,3 +112,5 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeBtn.click();
   }
 });
+
+// MICROMODAL

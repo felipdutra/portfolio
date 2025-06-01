@@ -230,6 +230,7 @@ body {
   scroll-behavior: smooth;
   text-wrap: pretty;
   font-feature-settings: "ss03" 1;
+  overflow-x: hidden;
 }
 body.loading * {
   opacity: 0;
@@ -588,7 +589,6 @@ section__project .photo-hover,
   perspective: 500px;
   --mouse-x: 50%;
   --mouse-y: 50%;
-  border-radius: 10px;
 }
 section__project .photo-hover img,
 .section__project .photo-hover img {
@@ -636,8 +636,6 @@ section__case--cover,
 .section__case--cover {
   margin-top: 32px;
   cursor: pointer;
-  border-radius: 10px;
-  overflow: hidden;
 }
 section__experience,
 .section__experience {
@@ -753,8 +751,6 @@ section__gallery--item,
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-radius: 10px;
-  overflow: hidden;
 }
 section__gallery--item small,
 .section__gallery--item small {
@@ -1173,14 +1169,6 @@ footer__menu--item:hover,
   .section__photos {
     padding-bottom: 60px;
     margin: -24px -40px 0;
-  }
-  section__gallery--item,
-  .section__gallery--item {
-    margin: 0 -24px;
-  }
-  section__gallery--item small,
-  .section__gallery--item small {
-    padding-inline: 24px;
   }
   footer,
   .footer {
