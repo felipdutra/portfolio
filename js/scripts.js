@@ -48,6 +48,16 @@ document.querySelectorAll(".photo-hover").forEach((el) => {
   });
 });
 
+// DISABLE SCROLL ON MODAL OPEN
+const modalToggle = document.getElementById("modalToggle");
+
+modalToggle.addEventListener("change", function () {
+  if (this.checked) {
+    document.body.style.overflow = "hidden"; // bloqueia scroll
+  } else {
+    document.body.style.overflow = ""; // libera scroll
+  }
+});
 // LIGHTBOX
 
 const thumbs = document.querySelectorAll(".modal-img img");

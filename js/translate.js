@@ -13,6 +13,7 @@ const translations = {
     heroTitleCustom: "Have a custom project in mind?",
     heroTitleContact: "Contact me to receive a proposal.",
 
+    buttonProposal: "Book a call",
     buttonBookCall: "Book a call",
     buttonChat: "Chat",
 
@@ -67,6 +68,10 @@ const translations = {
 
     contactTitle: "Let’s talk about our next project.",
 
+    modalTitle: "Let's chat!",
+    modalText:
+      "Schedule a call or drop me a message on WhatsApp to get started right away.",
+
     menuPortfolio: "Portfolio",
     menuServices: "Services",
     menuAbout: "About",
@@ -83,7 +88,8 @@ const translations = {
     heroTitleCustom: "Tem um projeto personalizado?",
     heroTitleContact: "Receba uma proposta.",
 
-    buttonBookCall: "Receber proposta",
+    buttonProposal: "Receber proposta",
+    buttonBookCall: "Agendar call",
     buttonChat: "Chat",
 
     quoteOne: "“Empresas que investem em design crescem 2x mais rápido.”",
@@ -136,6 +142,10 @@ const translations = {
       "Cada projeto é moldado por insights reais dos usuários. O resultado? Experiências naturais, que resolvem problemas reais e se conectam com quem realmente importa.",
 
     contactTitle: "Vamos conversar sobre o seu próximo projeto.",
+
+    modalTitle: "Entre em contato!",
+    modalText:
+      "Agende uma call ou me mande um Whatsapp para tirar qualquer dúvida.",
 
     menuPortfolio: "Portfólio",
     menuServices: "Serviços",
