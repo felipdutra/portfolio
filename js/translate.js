@@ -17,6 +17,8 @@ const translations = {
     buttonBookCall: "Book a call",
     buttonChat: "Chat",
 
+    labelHowItWorks: "The process",
+
     quoteOne: "“Companies that invest in design grow 2x faster.”",
     quoteTwo: "“Every $1 invested in design can return up to $100.”",
 
@@ -91,6 +93,8 @@ const translations = {
     buttonProposal: "Receber proposta",
     buttonBookCall: "Agendar call",
     buttonChat: "Chat",
+
+    labelHowItWorks: "Como funciona",
 
     quoteOne: "“Empresas que investem em design crescem 2x mais rápido.”",
     quoteTwo: "“Cada R$1 investido em design pode retornar até R$100.”",
