@@ -996,11 +996,11 @@ section__quote--grid,
 }
 section__quote--item,
 .section__quote--item {
-  border-left: 2px solid var(--subtle);
-  padding-left: 16px;
-  font: var(--text-heading);
+  padding-left: 20px;
+  font: var(--text-text);
   font-weight: var(--fw-500);
   height: fit-content;
+  position: relative;
 }
 section__quote--item span,
 .section__quote--item span {
@@ -1008,6 +1008,17 @@ section__quote--item span,
   color: var(--soft);
   display: block;
   margin-top: 4px;
+}
+section__quote--item::after,
+.section__quote--item::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 0;
+  bottom: 20%;
+  height: 140%;
+  width: 0.5px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
 }
 section__how--grid,
 .section__how--grid {
