@@ -16,24 +16,51 @@ body {
     opacity: 1;
   }
 }
+// @font-face {
+//   font-family: "Inter";
+//   font-style: normal;
+//   font-weight: 400 700;
+//   font-display: swap;
+//   src: url("../font/InterVariable.woff2") format("woff2");
+// }
+
 @font-face {
-  font-family: "Inter";
+  font-family: "Calibre";
+  src: url("../font/Calibre-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
-  font-weight: 400 700;
   font-display: swap;
-  src: url("../font/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url("../font/Calibre-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url("../font/Calibre-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 main,
 .main {
   display: flex;
   flex-direction: column;
-  width: min(100%, calc(550px + (var(--padding-inline) * 2)));
+  width: min(100%, calc(550px + (var(--padding-gap) * 2)));
   gap: clamp(120px, 5vw + 60px, 200px);
   margin-inline: auto;
   position: relative;
-  padding-inline: var(--padding-inline);
-  padding-top: 60px;
+  padding: var(--padding-gap) var(--padding-gap) 0;
+
+  &-case {
+    font: var(--fw-400) 20px/1.4 var(--font-sans);
+  }
 }
 
 nav,
@@ -53,12 +80,15 @@ nav,
     -webkit-backdrop-filter: blur(8px);
     .nav {
       &__intro {
+        font: var(--text-small);
         &--name {
-          font: var(--text-small);
-          font-weight: var(--fw-600);
+          font-weight: var(--fw-500);
+          padding-top: 3px;
+          line-height: 1;
         }
         &--role {
-          font: var(--text-smaller);
+          padding-top: 2px;
+          line-height: 1;
         }
         &--avatar {
           height: 36px;
@@ -77,9 +107,10 @@ nav,
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
-    width: min(100%, calc(550px + (var(--padding-inline) * 2)));
-    padding: 0 var(--padding-inline);
+
+    gap: var(--padding-gap);
+    width: min(100%, calc(550px + (var(--padding-gap) * 2)));
+    padding: 0 var(--padding-gap);
     margin-inline: auto;
   }
   &__intro {
@@ -97,11 +128,14 @@ nav,
       width: min(100%, 40px);
     }
     &--name {
-      font-weight: var(--fw-600);
+      font-weight: var(--fw-500);
+      line-height: 1.1;
+      margin-top: 4px;
     }
     &--role {
       font: var(--text-small);
       color: var(--soft);
+      line-height: 1.1;
     }
   }
   &__menu {
@@ -122,10 +156,10 @@ nav,
       gap: 4px;
       font: var(--text-small);
       color: var(--soft);
-      font-weight: var(--fw-500);
       position: relative;
       text-decoration: none;
       height: 32px;
+      padding-top: 6px;
       &.active {
         color: var(--accent);
         &::after {
@@ -149,10 +183,10 @@ nav,
       justify-content: center;
       gap: 8px;
       height: 32px;
-      padding: 0 14px 2px 16px;
+      padding: 2px 14px 0 16px;
       @extend .bt-secondary;
       svg {
-        margin: 0;
+        margin: -3px 0 0 -2px;
         top: 0;
       }
       // display: none;
@@ -167,9 +201,9 @@ button,
   justify-content: center;
   gap: 4px;
   height: 36px;
-  padding: 0 20px 2px;
+  padding: 2px 20px 0;
   font: var(--text-small);
-  font-weight: var(--fw-600);
+  font-weight: var(--fw-500);
   border-radius: 999px;
   color: var(--accent);
   background-color: transparent;
@@ -266,12 +300,13 @@ header,
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: clamp(24px, 1vw + 18px, 32px);
+  gap: var(--padding-gap);
   padding-top: clamp(120px, 5vw + 60px, 200px);
   text-align: center;
   &--hero,
   &--title {
     @extend .gradient-text-orange;
+    text-wrap: balance;
   }
   &--hero {
     font: var(--text-hero);
@@ -323,70 +358,20 @@ header,
     );
     mask: linear-gradient(black, black) content-box exclude,
       linear-gradient(black, black);
-    mix-blend-mode: overlay;
     z-index: 1;
+    opacity: 0.1;
   }
-}
-.shader-soft {
-  position: relative;
-  z-index: 0;
-  box-shadow: rgba(134, 143, 151, 0.08) 0px 0px 0px 0.5px inset,
-    rgba(134, 143, 151, 0.12) 1px 1px 0px -0.5px inset,
-    rgba(134, 143, 151, 0.12) -1px -1px 0px -0.5px inset;
-  &::before {
-    content: "";
-    pointer-events: none;
-    user-select: none;
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-  }
-  &::before {
-    background: linear-gradient(
-        145.76deg,
-        rgba(198, 198, 198, 0.16) -4.25%,
-        rgba(27, 27, 27, 0.27) 20.75%
-      ),
-      linear-gradient(
-        167.5deg,
-        rgba(27, 27, 27, 0.034) 58.18%,
-        rgba(198, 198, 198, 0.178) 92.77%
-      );
-    z-index: -1;
-    opacity: 0.4;
-  }
-  // &::after {
-  //   padding: 0.5px;
-  //   background: linear-gradient(
-  //     190deg,
-  //     rgba(255, 255, 255, 0.5) 10.85%,
-  //     rgba(20, 20, 20, 0.1) 24.36%,
-  //     rgba(50, 50, 50, 0.1) 73.67%,
-  //     rgba(255, 255, 255, 0.5) 90.68%
-  //   );
-  //   mask: linear-gradient(black, black) content-box exclude,
-  //     linear-gradient(black, black);
-  //   mix-blend-mode: overlay;
-  //   z-index: 1;
-  // }
 }
 
 .card {
-  &-default {
-    width: 100%;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    background-color: var(--background);
-    @extend .shader;
-  }
-  &-soft {
-    width: 100%;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    background-color: var(--background-subtle);
-    @extend .shader-soft;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-subtle);
+  @extend .shader;
+  &:hover {
+    background-color: var(--background-soft);
   }
 }
 
@@ -394,7 +379,8 @@ section,
 .section {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+
+  gap: var(--padding-gap);
   scroll-margin-top: 80px;
   &--label {
     font: var(--text-title);
@@ -416,8 +402,7 @@ section,
     flex: 1;
     width: 100%;
     &--title {
-      font: var(--text-title);
-      margin-bottom: 4px;
+      font: var(--text-heading);
     }
     &--text {
       display: flex;
@@ -436,10 +421,10 @@ section,
         &::after {
           content: "“";
           font: var(--text-hero);
+          font-weight: var(--fw-400);
           position: absolute;
           left: 0;
-          top: -5px;
-          font-feature-settings: "ss03" 1, "liga" 1, "calt" 1;
+          top: -4px;
         }
       }
     }
@@ -463,15 +448,15 @@ section,
   &__services {
     display: flex;
     flex-direction: column;
-    gap: clamp(16px, 1vw + 12px, 24px);
+    gap: var(--padding-gap);
     flex-wrap: wrap;
     &--card {
       display: flex;
       flex-direction: row;
-      padding: 20px 24px 24px 20px;
+      padding: 20px 20px 20px 16px;
       gap: 16px;
-      border-radius: 16px;
-      @extend .card-soft;
+      border-radius: var(--radius);
+      @extend .card;
 
       img {
         width: min(100%, 40px);
@@ -481,7 +466,7 @@ section,
     }
     .section__content--text {
       font: var(--text-body);
-      font-weight: var(--fw-600);
+      font-weight: var(--fw-500);
     }
     .section__content--text-soft {
       font: var(--text-small);
@@ -501,26 +486,24 @@ section,
       flex-direction: column;
       padding: 24px 32px 32px;
       text-decoration: none;
-      border-radius: 16px;
+      border-radius: var(--radius);
       aspect-ratio: 580/400;
-      background-color: var(--background-subtle);
       transition: all 200ms ease;
       cursor: pointer;
-      @extend .card-default;
+      @extend .card;
       &:hover {
-        scale: 1.01;
         color: var(--accent);
       }
     }
     &--title {
       display: flex;
       flex-direction: column;
-      font: var(--text-body);
       font-weight: var(--fw-600);
       white-space: normal;
       span {
         display: block;
         font: var(--text-small);
+        font-weight: var(--fw-400);
         color: var(--soft);
         margin-bottom: 24px;
         margin-top: 2px;
@@ -538,7 +521,8 @@ section,
     &--grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(213px, 1fr));
-      gap: 24px;
+
+      gap: var(--padding-gap);
       margin-top: 16px;
     }
     &--thumb {
@@ -592,10 +576,10 @@ section,
     }
     &--title {
       font: var(--text-title);
-      // font-feature-settings: "ss03" 1, "cv06" 1, "cv10" 1, "cv11" 1, "liga" 1,
-      //   "calt" 1;
       span {
-        color: var(--orange);
+        color: var(--green);
+        margin-block: 4px;
+        display: block;
       }
     }
     &--subtitle {
@@ -606,7 +590,7 @@ section,
       margin-top: 32px;
       cursor: pointer;
       @extend .shader;
-      border-radius: 16px;
+      border-radius: var(--radius);
       overflow: hidden;
     }
   }
@@ -625,7 +609,8 @@ section,
   &__contact {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+
+    gap: var(--padding-gap);
     width: 100%;
     &--grid {
       display: grid;
@@ -638,14 +623,14 @@ section,
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 6px;
       text-decoration: none;
-      border-radius: 10px;
-      padding: 14px 12px;
-      font: var(--text-smaller);
-      @extend .card-soft;
+      border-radius: var(--radius-button);
+      padding: 14px 12px 12px;
+      font: var(--text-small);
+      @extend .card;
       span {
-        font: var(--text-smaller);
+        font: var(--text-small);
         white-space: normal;
         text-align: center;
         line-height: 16px;
@@ -665,7 +650,7 @@ section,
     gap: 0;
     padding-top: clamp(120px, 5vw + 60px, 200px);
     img {
-      border-radius: 16px;
+      border-radius: var(--radius);
       scale: 1.1;
       transition: all 300ms ease;
       box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.1),
@@ -697,20 +682,20 @@ section,
     flex-direction: column;
     // display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
-    gap: 24px;
+
+    gap: var(--padding-gap);
     &--item {
       cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 8px;
       small {
-        font: var(--text-smaller);
+        font: var(--text-small);
         color: var(--soft);
-        margin-bottom: 16px;
       }
       img {
         @extend .shader;
-        border-radius: 16px;
+        border-radius: var(--radius);
         overflow: hidden;
       }
     }
@@ -723,14 +708,16 @@ section,
       width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: clamp(32px, 2vw + 22px, 48px);
+      gap: var(--padding-gap);
     }
     &--item {
-      font: var(--text-head);
       border-left: 2px solid var(--subtle);
       padding-left: 16px;
+      font: var(--text-heading);
+      font-weight: var(--fw-500);
+      height: fit-content;
       span {
-        font: var(--text-smaller);
+        font: var(--text-small);
         color: var(--soft);
         display: block;
         margin-top: 4px;
@@ -742,18 +729,17 @@ section,
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: var(--padding-gap);
     }
     &--card {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 20px 24px 24px;
-      border-radius: 16px;
+      padding: 20px;
+      border-radius: var(--radius);
       position: relative;
       overflow: hidden;
       background-color: var(--background-subtle);
-      @extend .shader-soft;
+      @extend .shader;
     }
     &--title {
       display: flex;
@@ -777,8 +763,8 @@ footer,
 .footer {
   padding: clamp(120px, 5vw + 60px, 200px) 0;
   &__wrapper {
-    width: min(100%, calc(550px + (var(--padding-inline) * 2)));
-    padding-inline: var(--padding-inline);
+    width: min(100%, calc(550px + (var(--padding-gap) * 2)));
+    padding-inline: var(--padding-gap);
     margin-inline: auto;
     display: flex;
     flex-direction: row;
@@ -850,16 +836,14 @@ footer,
   }
   &__container {
     position: relative;
-    background: var(--background-subtle);
+    background: var(--background);
     padding: 28px 32px 32px;
-    border-radius: 16px;
+    border-radius: var(--radius);
     width: min(100%, 400px);
     z-index: 1;
     animation: fadeInScale 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
-    box-shadow: rgba(134, 143, 151, 0.04) 0px 0px 0px 0.5px inset,
-      rgba(134, 143, 151, 0.08) 1px 1px 0px -0.5px inset,
-      rgba(134, 143, 151, 0.08) -1px -1px 0px -0.5px inset;
     text-align: left;
+    @extend .shader;
     &--title {
       font: var(--text-heading);
       margin-bottom: 4px;
@@ -881,11 +865,10 @@ footer,
       align-items: center;
       justify-content: center;
       gap: 4px;
-      background-color: var(--background-subtle);
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: var(--radius-button);
       padding: 14px 12px;
-      @extend .shader-soft;
+      @extend .shader;
       span {
         font: var(--text-small);
         white-space: normal;

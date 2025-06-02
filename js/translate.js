@@ -3,9 +3,8 @@
 // Traduções simples (adicione o que precisar)
 const translations = {
   en: {
-    heroTitleFounder: "Founder, Startup or Agency?",
-    heroTitleLetsCollaborate:
-      "Let's collaborate to design your vision into solutions that drive customer and business growth.",
+    heroTitleFounder:
+      "Founder, Startup or Agency? Let's collaborate to design your vision into solutions that drive customer and business growth.",
 
     heroTitleReady: "Ready to get design done?",
     heroTitleLetsTalk: "Let's talk about your next thing.",
@@ -80,9 +79,8 @@ const translations = {
     menuContact: "Contact",
   },
   pt: {
-    heroTitleFounder: "Fundador, Startup ou Agência?",
-    heroTitleLetsCollaborate:
-      "Vamos transformar sua visão em soluções que impulsionam o crescimento do seu negócio.",
+    heroTitleFounder:
+      "Fundador, Startup ou Agência? Vamos transformar sua visão em soluções que impulsionam o crescimento do seu negócio.",
 
     heroTitleReady: "Pronto escalar com design?",
     heroTitleLetsTalk: "Vamos falar sobre o seu próximo projeto.",
