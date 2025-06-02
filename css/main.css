@@ -282,7 +282,7 @@ main,
   gap: clamp(120px, 5vw + 60px, 200px);
   margin-inline: auto;
   position: relative;
-  padding: var(--padding-gap) var(--padding-gap) 0;
+  padding: calc(var(--padding-gap) * 2) var(--padding-gap) 0;
 }
 main-case,
 .main-case {
@@ -1293,6 +1293,10 @@ footer__menu--item:hover,
   .main {
     padding-top: 20px;
     gap: clamp(80px, 5vw + 40px, 120px);
+  }
+  main-case,
+  .main-case {
+    font: var(--text-body);
   }
   nav,
   .nav {

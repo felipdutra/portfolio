@@ -56,7 +56,7 @@ main,
   gap: clamp(120px, 5vw + 60px, 200px);
   margin-inline: auto;
   position: relative;
-  padding: var(--padding-gap) var(--padding-gap) 0;
+  padding: calc(var(--padding-gap) * 2) var(--padding-gap) 0;
 
   &-case {
     font: var(--fw-400) 20px/1.4 var(--font-sans);

@@ -3,6 +3,9 @@
   .main {
     padding-top: 20px;
     gap: clamp(80px, 5vw + 40px, 120px);
+    &-case {
+      font: var(--text-body);
+    }
   }
   nav,
   .nav {
