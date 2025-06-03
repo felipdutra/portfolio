@@ -628,7 +628,7 @@ header--subtitle,
 .section__services--card::before {
   background: linear-gradient(145.76deg, rgba(198, 198, 198, 0.16) -4.25%, rgba(27, 27, 27, 0.27) 20.75%), linear-gradient(167.5deg, rgba(27, 27, 27, 0.034) 58.18%, rgba(198, 198, 198, 0.178) 92.77%);
   z-index: -1;
-  opacity: 0.16;
+  opacity: 0.4;
 }
 .shader::after, .modal__container--card::after, section__gallery--item img::after,
 .section__gallery--item img::after, section__case--cover::after,
