@@ -166,6 +166,10 @@ table {
   transition: var(--tr);
   background-repeat: no-repeat;
   font-feature-settings: "ss03" 1, "liga" 1, "calt" 1;
+  font-variant-ligatures: none;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--subtle) var(--background);
 }
 
 a,

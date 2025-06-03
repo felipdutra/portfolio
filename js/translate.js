@@ -77,6 +77,7 @@ const translations = {
     menuServices: "Services",
     menuAbout: "About",
     menuContact: "Contact",
+    menuBack: "Back",
   },
   pt: {
     heroTitleFounder:
@@ -153,6 +154,7 @@ const translations = {
     menuServices: "Serviços",
     menuAbout: "Sobre",
     menuContact: "Contato",
+    menuBack: "Voltar",
   },
 };
 
