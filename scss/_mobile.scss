@@ -1,4 +1,8 @@
 @media only screen and (max-width: 600px) {
+  body {
+    background-size: 175%;
+    background-position: center 80px;
+  }
   main,
   .main {
     padding-top: 20px;
