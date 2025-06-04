@@ -6,8 +6,9 @@ body {
   text-wrap: pretty;
   font-feature-settings: "ss03" 1;
   overflow-x: hidden;
-  background: var(--background) url(/img/hero.jpg) no-repeat center 50px;
-  background-size: contain;
+  // background: var(--background) url(/img/hero.jpg) no-repeat center 50px;
+  // background-size: contain;
+  background-color: var(--background);
   &.loading * {
     opacity: 0;
     transition: opacity 0.5s ease;
